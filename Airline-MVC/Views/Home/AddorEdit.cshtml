@@ -1,0 +1,39 @@
+﻿@model Airline_MVC.Models.AirlineTicket
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1> @ViewBag.PageName</h1>
+
+<form asp-action="AddOrEdit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @if (@ViewBag.IsEdit)
+    {
+        <input type="hidden" asp-for="TicketNum" />
+    }
+    <div class="form-group">
+        <label asp-for="Class" class="control-label"></label>
+        <input asp-for="Class" class="form-control" />
+        <span asp-validation-for="Class" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FullName" class="control-label"></label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="InitialAirport" class="control-label"></label>
+        <input asp-for="InitialAirport" class="form-control" />
+        <span asp-validation-for="InitialAirport" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LandingAirport" class="control-label"></label>
+        <input asp-for="LandingAirport" class="form-control" />
+        <span asp-validation-for="LandingAirport" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input class="btn btn-outline-primary" type="submit" value= "Submit" />
+        <a class="btn btn-danger" asp-action="Index">Home</a>
+    </div>
+
+</form>

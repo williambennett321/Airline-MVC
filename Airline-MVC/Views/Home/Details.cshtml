@@ -1,0 +1,27 @@
+﻿@model Airline_MVC.Models.AirlineTicket
+@{
+    ViewData["Title"] = " Ticket Details: ";
+}
+
+<h1>Ticket Details: </h1>
+
+<h3>@Html.DisplayFor(model => model.FullName) </h3>
+<div>
+    <p>Class : @Html.DisplayNameFor(model => model.Class)</p>
+    <p>@Html.DisplayFor(model => model.Class)</p>
+</div>
+<div>
+    <p>Class : @Html.DisplayNameFor(model => model.InitialAirport)</p>
+    <p>@Html.DisplayFor(model => model.InitialAirport)</p>
+</div>
+<div>
+    <p>Class : @Html.DisplayNameFor(model => model.LandingAirport)</p>
+    <p>@Html.DisplayFor(model => model.LandingAirport)</p>
+</div>
+
+<div>
+    <a class="btn btn-primary" asp-action="AddOrEdit" asp-route-TicketNum="@Model.TicketNum">Edit</a>
+    <a class="btn btn-danger" asp-action="Index">Home</a>
+</div>
+
+
